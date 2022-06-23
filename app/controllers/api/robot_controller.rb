@@ -72,7 +72,7 @@ class Api::RobotController < ApplicationController
 
       @x += 1
 
-    elsif @direction =='west' && @x > @min
+    elsif @direction == 'west' && @x > @min
       @x -= 1
     end
   end
@@ -110,6 +110,5 @@ class Api::RobotController < ApplicationController
 
   def report
     render json: { location: [@x, @y, @direction.upcase] }
-    
   end
 end

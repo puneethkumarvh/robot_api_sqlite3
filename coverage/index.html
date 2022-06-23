@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-15T20:38:06+05:30">2022-06-15T20:38:06+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-06-23T23:35:27+05:30">2022-06-23T23:35:27+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">60.83%</span></span>
+    (<span class="covered_percent"><span class="red">61.29%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>16</b> files in total.
-    <b>120</b> relevant lines. 
-    <span class="green"><b>73</b> lines covered</span> and
-    <span class="red"><b>47</b> lines missed </span>
+    <b>124</b> relevant lines. 
+    <span class="green"><b>76</b> lines covered</span> and
+    <span class="red"><b>48</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,6 +51,16 @@
     <tbody>
       
       <tr>
+        <td class="strong"><a href="#b845fd82d60502ba1d9061496d814843196795b3" class="src_link" title="app/controllers/api/robot_controller.rb">app/controllers/api/robot_controller.rb</a></td>
+        <td class="red strong">23.73 %</td>
+        <td>115</td>
+        <td>59</td>
+        <td>14</td>
+        <td>45</td>
+        <td>0.2</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#9b8967cd38fba3195882405bb0e2325ce57f0ec4" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>2</td>
@@ -58,16 +68,6 @@
         <td>1</td>
         <td>0</td>
         <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#3fecaaccae5956e8f832064afeea0dd6461ef4a2" class="src_link" title="app/controllers/robot_controller.rb">app/controllers/robot_controller.rb</a></td>
-        <td class="red strong">21.43 %</td>
-        <td>130</td>
-        <td>56</td>
-        <td>12</td>
-        <td>44</td>
-        <td>0.2</td>
       </tr>
       
       <tr>
@@ -183,9 +183,9 @@
       <tr>
         <td class="strong"><a href="#21325ff74f274414a6582f71fc31dd5f91fd7dd8" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>4</td>
-        <td>2</td>
-        <td>2</td>
+        <td>7</td>
+        <td>3</td>
+        <td>3</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -203,7 +203,7 @@
       <tr>
         <td class="strong"><a href="#cd143b69762fea6b821d80da808f683df14d47d0" class="src_link" title="spec/requests/robot_spec.rb">spec/requests/robot_spec.rb</a></td>
         <td class="yellow strong">83.33 %</td>
-        <td>11</td>
+        <td>43</td>
         <td>6</td>
         <td>5</td>
         <td>1</td>
@@ -226,6 +226,715 @@
     
       <div class="source_files">
       
+        <div class="source_table" id="b845fd82d60502ba1d9061496d814843196795b3">
+  <div class="header">
+    <h3>app/controllers/api/robot_controller.rb</h3>
+    <h4><span class="red">23.73 %</span> covered</h4>
+    <div>
+      <b>59</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
+      <span class="red"><b>45</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Api::RobotController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def orders</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @x, @y, flag = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @min = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @max = 4</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @direction = &#39;&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @commands = params[:Commands]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    count = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    for i in 0..@commands.length - 1 do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">      if @commands[i][0] == &#39;P&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">        break</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">        count += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
+          
+          <code class="ruby">    @commands = @commands.drop(count)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    # render json: @commands</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">    for i in 0..@commands.length - 1 do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">      cmd = @commands[i].downcase!.gsub(&#39;,&#39;, &#39; &#39;).split(&#39; &#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">      if cmd[0] == &#39;place&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">        if cmd[1].to_i &lt;= @max &amp;&amp; cmd[2].to_i &lt;= @max &amp;&amp; cmd[1].to_i &gt;= @min &amp;&amp; cmd[2].to_i &gt;= @min</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="31">
+          
+          
+          <code class="ruby">          place(cmd[1].to_i, cmd[2].to_i, cmd[3])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="35">
+          
+          
+          <code class="ruby">          flag = 1</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">          break</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">      elsif cmd[0] == &#39;move&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="40">
+          
+          
+          <code class="ruby">        move</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="42">
+          
+          
+          <code class="ruby">      elsif cmd[0] == &#39;left&#39; || cmd[0] == &#39;right&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">        rotate(cmd[0])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">      elsif cmd[0] == &#39;report&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">        report</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    # render json: cmd</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
+          
+          <code class="ruby">    render json: { &quot;Error&quot;: &#39;Values are incorrect&#39; } if flag == 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def place(x, y, dir)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
+          
+          <code class="ruby">    @x = x</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="59">
+          
+          
+          <code class="ruby">    @y = y</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="60">
+          
+          
+          <code class="ruby">    @direction = dir</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def move</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
+          
+          <code class="ruby">    if @direction == &#39;north&#39; &amp;&amp; @y &lt; @max</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">      @y += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="67">
+          
+          
+          <code class="ruby">    elsif @direction == &#39;south&#39; &amp;&amp; @y &gt; @min</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
+          
+          <code class="ruby">      @y -= 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
+          
+          <code class="ruby">    elsif @direction == &#39;east&#39; &amp;&amp; @x &lt; @max</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
+          
+          <code class="ruby">      @x += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="75">
+          
+          
+          <code class="ruby">    elsif @direction ==&#39;west&#39; &amp;&amp; @x &gt; @min</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="76">
+          
+          
+          <code class="ruby">      @x -= 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def rotate(side)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
+          <code class="ruby">    @direction = if side == &#39;left&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">                   if @direction == &#39;south&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="84">
+          
+          
+          <code class="ruby">                     &#39;east&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="86">
+          
+          
+          <code class="ruby">                   elsif @direction == &#39;east&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="87">
+          
+          
+          <code class="ruby">                     &#39;north&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
+          
+          <code class="ruby">                   elsif @direction == &#39;north&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
+          
+          <code class="ruby">                     &#39;west&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="91">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">                   else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="93">
+          
+          
+          <code class="ruby">                     &#39;south&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby">                   end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="95">
+          
+          
+          <code class="ruby">                 elsif @direction == &#39;south&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="97">
+          
+          
+          <code class="ruby">                   &#39;west&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="99">
+          
+          
+          <code class="ruby">                 elsif @direction == &#39;west&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="100">
+          
+          
+          <code class="ruby">                   &#39;north&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="102">
+          
+          
+          <code class="ruby">                 elsif @direction == &#39;north&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="103">
+          
+          
+          <code class="ruby">                   &#39;east&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">                 else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="106">
+          
+          
+          <code class="ruby">                   &#39;south&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">                 end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def report</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="112">
+          
+          
+          <code class="ruby">    render json: { location: [@x, @y, @direction.upcase] }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="9b8967cd38fba3195882405bb0e2325ce57f0ec4">
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
@@ -247,805 +956,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="3fecaaccae5956e8f832064afeea0dd6461ef4a2">
-  <div class="header">
-    <h3>app/controllers/robot_controller.rb</h3>
-    <h4><span class="red">21.43 %</span> covered</h4>
-    <div>
-      <b>56</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>44</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class RobotController &lt; ApplicationController</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def orders</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @x, @y, flag = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">           @min, @max, @direction = 0, 4, &quot;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">     </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">           @commands = params[:commands]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">           count = 0</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">           for i in 0..@commands.length-1 do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">                if @commands[i][0] == &quot;P&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">                    break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">                                                   </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">                else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
-          
-          <code class="ruby">                    count+=1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">                                 </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">               end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">           end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
-          
-          <code class="ruby">           @commands = @commands.drop(count)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">           </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">          # render json: @commands</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">           </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
-          
-          <code class="ruby">           for i in 0..@commands.length-1 do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
-          
-          <code class="ruby">               cmd = @commands[i].downcase!.gsub(&quot;,&quot;,&quot; &quot;).split(&quot; &quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="27">
-          
-          
-          <code class="ruby">               if cmd[0] == &#39;place&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">                  </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="29">
-          
-          
-          <code class="ruby">                   if cmd[1].to_i &lt;= @max &amp;&amp; cmd[2].to_i &lt;= @max &amp;&amp; cmd[1].to_i &gt;= @min &amp;&amp; cmd[2].to_i &gt;= @min </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
-          
-          <code class="ruby">                       place(cmd[1].to_i, cmd[2].to_i, cmd[3])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
-          
-          
-          <code class="ruby">                   else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
-          
-          <code class="ruby">                       flag=1</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
-          
-          <code class="ruby">                       break</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby">                   end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="39">
-          
-          
-          <code class="ruby">               elsif cmd[0] == &#39;move&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="40">
-          
-          
-          <code class="ruby">                   move()</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
-          
-          <code class="ruby">               elsif cmd[0] == &#39;left&#39; || cmd[0] == &#39;right&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="43">
-          
-          
-          <code class="ruby">                   rotate(cmd[0])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="45">
-          
-          
-          <code class="ruby">               elsif cmd[0] == &#39;report&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="46">
-          
-          
-          <code class="ruby">                   report()</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby">               end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby">           end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby">           #render json: cmd</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="52">
-          
-          
-          <code class="ruby">           if flag==1</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
-          
-          <code class="ruby">               render json: { &quot;Error&quot;: &quot;Values are incorrect&quot; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">           end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">       end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby"> </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">           </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby">           </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">       </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">            </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby">      </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="65">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
-          
-          <code class="ruby"> private </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby"> def place(x, y, dir)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="68">
-          
-          
-          <code class="ruby">    @x, @y, @direction = x, y, dir</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="69">
-          
-          
-          <code class="ruby"> end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="70">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="72">
-          <span class="hits">1</span>
-          
-          <code class="ruby">def move</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="73">
-          
-          
-          <code class="ruby">    if @direction == &#39;north&#39; &amp;&amp; @y &lt; @max</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="74">
-          
-          
-          <code class="ruby">                    @y += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby">       </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="76">
-          
-          
-          <code class="ruby">    elsif @direction == &#39;south&#39; &amp;&amp; @y &gt; @min</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="78">
-          
-          
-          <code class="ruby">            @y -= 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="79">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
-          
-          <code class="ruby">    elsif @direction == &#39;east&#39; &amp;&amp; @x &lt; @max</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="82">
-          
-          
-          <code class="ruby">            @x += 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">        </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
-          
-          <code class="ruby">        if @y &gt; @min </code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="86">
-          
-          
-          <code class="ruby">            @y -= 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="88">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="90">
-          
-          
-          <code class="ruby">       </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        def rotate(side)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="92">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="93">
-          
-          
-          <code class="ruby">            if side == &#39;left&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="95">
-          
-          
-          <code class="ruby">                if @direction == &#39;south&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="96">
-          
-          
-          <code class="ruby">                    @direction = &#39;east&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="97">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">                elsif @direction == &#39;east&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="99">
-          
-          
-          <code class="ruby">                    @direction = &#39;north&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="101">
-          
-          
-          <code class="ruby">                elsif @direction == &#39;north&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="102">
-          
-          
-          <code class="ruby">                    @direction = &#39;west&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">                else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="105">
-          
-          
-          <code class="ruby">                    @direction = &#39;south&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">                end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">            else</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="109">
-          
-          
-          <code class="ruby">                if @direction == &#39;south&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="110">
-          
-          
-          <code class="ruby">                    @direction = &#39;west&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="111">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="112">
-          
-          
-          <code class="ruby">                elsif @direction == &#39;west&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="113">
-          
-          
-          <code class="ruby">                    @direction = &#39;north&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="114">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="115">
-          
-          
-          <code class="ruby">                elsif @direction == &#39;north&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="116">
-          
-          
-          <code class="ruby">                    @direction = &#39;east&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="117">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
-          <code class="ruby">                else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="119">
-          
-          
-          <code class="ruby">                    @direction = &#39;south&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="121">
-          
-          
-          <code class="ruby">                end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="122">
-          
-          
-          <code class="ruby">            end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="124">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="125">
-          
-          
-          <code class="ruby">   </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="126">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        def report</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="127">
-          
-          
-          <code class="ruby">            render json:  { location: [@x,@y,@direction.upcase] }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="128">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="129">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby">end</code>
@@ -2254,8 +2164,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2272,16 +2182,34 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;robot/orders&#39;</code>
+          <code class="ruby">  namespace :api do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    post &#39;robot/0/orders&#39; =&gt; &#39;robot#orders&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -2754,7 +2682,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;GET /orders&quot; do</code>
+          <code class="ruby">  describe &quot;Post /orders&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2766,7 +2694,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">      get &quot;/robot/orders&quot;</code>
+          <code class="ruby">      post &quot;/api/robot/0/orders&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
@@ -2796,7 +2724,199 @@
         <li class="never" data-hits="" data-linenumber="11">
           
           
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"># # require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"># # describe RobotsController, :type =&gt; :controller do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">#   describe &quot;GET new&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">#     it &quot;should render new template&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">#       get :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">#       assigns(:robot).should_not be_nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">#       expect(response).to render_template(:new)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">#     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">#   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">#   describe &quot;POST create&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">#     describe &quot;with valid params&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">#       it &quot;should render the new template&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">#         post :create, :robot =&gt; { :commands =&gt; &quot;PLACE 0,0,NORTH MOVE&quot; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">#         expect(response).to render_template(:new)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">#       end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">#     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">#     describe &quot;with invalid params&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">#       it &quot;should re-render new template&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">#         post :create, :robot =&gt; {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">#         expect(response).to render_template(:new)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">#       end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">#     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">#   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby"># end</code>
         </li>
       
     </ol>

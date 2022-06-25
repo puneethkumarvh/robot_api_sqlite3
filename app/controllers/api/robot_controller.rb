@@ -1,114 +1,90 @@
 class Api::RobotController < ApplicationController
   def orders
     @x, @y, flag = 0
-    @min = 0
-    @max = 4
-    @direction = ''
+            @min, @max, @direction = 0, 4, ""
 
-    @commands = params[:Commands]
+            commands = params[:Commands]
 
-    count = 0
-    for i in 0..@commands.length - 1 do
-      if @commands[i][0] == 'P'
-        break
+            # Check until PLACE command found
+            for j in 0..(commands.length-1) do
+                if commands[j][0] == "P"
+                    break
+                end
+            end
 
-      else
-        count += 1
+            # Loop for valid commands
+            for i in j..(commands.length-1) do
+                # Split the command
+                cmd = commands[i].downcase!.gsub(","," ").split(" ")
 
-      end
-    end
-    @commands = @commands.drop(count)
+                if cmd[0] == "place"
+                    if cmd[1].to_i <= @max && cmd[2].to_i <= @max && cmd[1].to_i >= @min && cmd[2].to_i >= @min
+                        place(cmd[1].to_i,cmd[2].to_i,cmd[3])
+                    else
+                        flag = 1
+                        break
+                    end
+                elsif cmd[0] == "move"
+                    move()
+                elsif cmd[0] == "left" || cmd[0] == "right"
+                    rotate(cmd[0])
+                elsif cmd[0] == "report"
+                    report()
+                end
+            end
 
-    # render json: @commands
-
-    for i in 0..@commands.length - 1 do
-      cmd = @commands[i].downcase!.gsub(',', ' ').split(' ')
-
-      if cmd[0] == 'place'
-
-        if cmd[1].to_i <= @max && cmd[2].to_i <= @max && cmd[1].to_i >= @min && cmd[2].to_i >= @min
-
-          place(cmd[1].to_i, cmd[2].to_i, cmd[3])
-
-        else
-
-          flag = 1
-          break
-
+            if flag == 1
+                render json: { "warning": "Enter valid value for x & y in PLACE command" }
+            end
         end
-      elsif cmd[0] == 'move'
-        move
 
-      elsif cmd[0] == 'left' || cmd[0] == 'right'
-        rotate(cmd[0])
+        private
+            # PLACE
+            def place(x, y, dir)
+                @x, @y, @direction = x, y, dir
+            end
 
-      elsif cmd[0] == 'report'
-        report
+            # MOVE
+            def move
+                if @direction == "north" && @y < @max
+                        @y += 1
+                elsif @direction == "south" && @y > @min
+                        @y -= 1
+                elsif @direction == "east" && @x < @max
+                        @x += 1
+                elsif @direction == "west" && @x > @min
+                        @x -= 1
+                end
+            end
 
-      end
-    end
-    # render json: cmd
+            # REPORT
+            def report
+                render json: { location: [@x,@y,@direction.upcase] }
+            end
 
-    render json: { "Error": 'Values are incorrect' } if flag == 1
-  end
-
-  private
-
-  def place(x, y, dir)
-    @x = x
-    @y = y
-    @direction = dir
-  end
-
-  def move
-    if @direction == 'north' && @y < @max
-      @y += 1
-
-    elsif @direction == 'south' && @y > @min
-
-      @y -= 1
-
-    elsif @direction == 'east' && @x < @max
-
-      @x += 1
-
-    elsif @direction == 'west' && @x > @min
-      @x -= 1
-    end
-  end
-
-  def rotate(side)
-    @direction = if side == 'left'
-
-                   if @direction == 'south'
-                     'east'
-
-                   elsif @direction == 'east'
-                     'north'
-
-                   elsif @direction == 'north'
-                     'west'
-
-                   else
-                     'south'
-                   end
-                 elsif @direction == 'south'
-
-                   'west'
-
-                 elsif @direction == 'west'
-                   'north'
-
-                 elsif @direction == 'north'
-                   'east'
-
-                 else
-                   'south'
-
-                 end
-  end
-
-  def report
-    render json: { location: [@x, @y, @direction.upcase] }
-  end
+            # LEFT or RIGHT
+            def rotate(dir)
+                if dir == "left"
+                    if @direction == "north"
+                        @direction = "west"
+                    elsif @direction == "west"
+                        @direction = "south"
+                    elsif @direction == "south"
+                        @direction = "east"
+                    else
+                        @direction = "north"
+                    end
+                else
+                    if @direction == "north"
+                        @direction = "east"
+                    elsif @direction == "east"
+                        @direction = "south"
+                    elsif @direction == "south"
+                        @direction = "west"
+                    else
+                        @direction = "north"
+                    end
+                end
+            end
+          
 end
